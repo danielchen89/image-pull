@@ -37,6 +37,7 @@ go build image-pull-client.go
 
 ### 2.在服务端安装nginx,开放端口
 1)配置nginx的/data/package为nginx目录,设置并开放nginx端口为30000
+
 2)开放端口50000 给客户端访问
 
 
