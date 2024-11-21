@@ -25,13 +25,17 @@
 #使用教程：
 ### 1.编译代码
 cd image-pull
+
 go mod init image-pull
+
 go mod tidy
+
 go build image-pul-server.go 
+
 go build image-pull-client.go 
 
 
-#2.在服务端安装nginx,开放端口
+### 2.在服务端安装nginx,开放端口
 1)配置nginx的/data/package为nginx目录,设置并开放nginx端口为30000
 2)开放端口50000 给客户端访问
 
