@@ -1,0 +1,32 @@
+[Unit]
+Description=Image Pull Server Service
+Documentation=https://github.com/xxxx/image-pull
+After=network.target docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/data/image-pull
+ExecStart=/data/image-pull/image-pull-server
+Restart=always
+RestartSec=10
+
+# 设置环境变量
+Environment=DOWNLOAD_DIR=/data/package
+
+# 设置资源限制
+LimitNOFILE=65535
+LimitNPROC=65535
+
+# 设置安全选项
+ProtectSystem=full
+PrivateTmp=true
+
+# 设置日志
+StandardOutput=append:/data/image-pull/image-pull-server.log
+StandardError=append:/data/image-pull/image-pull-server.error.log
+
+[Install]
+WantedBy=multi-user.target
