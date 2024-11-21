@@ -64,4 +64,4 @@ sudo journalctl -u image-pull-server -f
 
 以下载ubuntu镜像为例
 ./image-pull-client ubuntu
-
+![image](https://github.com/danielchen89/image-pull/blob/main/image-pull-client.png)
