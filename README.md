@@ -22,8 +22,8 @@
 6. 清理本地临时文件
 
 
-使用教程：
-#1.编译代码
+#使用教程：
+### 1.编译代码
 cd image-pull
 go mod init image-pull
 go mod tidy
@@ -37,26 +37,26 @@ go build image-pull-client.go
 
 
 
-#3.启动服务端的服务
-# 复制服务文件
+### 3.启动服务端的服务
+##### 复制服务文件
 sudo cp image-pull-server.service /etc/systemd/system/
 
-# 重新加载 systemd
+##### 重新加载 systemd
 sudo systemctl daemon-reload
 
-# 启动服务
+##### 启动服务
 sudo systemctl start image-pull-server
 
-# 设置开机自启
+##### 设置开机自启
 sudo systemctl enable image-pull-server
 
-# 查看服务状态
+#####  查看服务状态
 sudo systemctl status image-pull-server
 
-# 查看日志
+##### 查看日志
 sudo journalctl -u image-pull-server -f
 
-#4.客户端下载镜像
+### 4.客户端下载镜像
 
 以下载ubuntu镜像为例
 ./image-pull-client ubuntu
